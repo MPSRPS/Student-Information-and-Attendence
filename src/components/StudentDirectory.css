@@ -1,0 +1,280 @@
+/* src/EmployeeDirectory.css */
+* {
+    margin: 0;
+    padding: 0;    
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #E2D8FB, #F6F5FD, #E2D8FB);
+}
+
+.container {
+    width: 100%;
+    padding: 80px; /* Adjust padding as needed for layout */
+}.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-and-filters {
+    display: flex;
+    justify-content: space-between; /* Aligns search bar on the left and profile/filter on the right */
+    align-items: center;
+    width: 100%;
+}
+
+.profile-and-filter {
+    display: flex;
+    flex-direction: column; /* Stack profile and filter vertically */
+    align-items: flex-end; /* Align profile and filter to the right */
+    gap: 25px; /* Space between profile and filters */
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between profile picture and name */
+}
+
+.filter {
+    display: flex;
+    gap: 10px; /* Space between filter buttons */
+}
+
+
+.filter-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: transparent;
+    color: #888;
+}
+
+.filter-button.active {
+    background-color: #A375DF;
+    color: #fff;
+}
+
+
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between profile picture and name */
+    margin-left: 10px;
+}
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown button */
+.dropdown-button {
+    background: none;
+    border: none;
+    font-size: 12px;
+    color: #000;
+    cursor: pointer;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 0; /* Aligns dropdown to the right */
+    top: 100%; /* Positions below the dropdown button */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    min-width: 150px;
+    z-index: 1  ;
+}
+
+/* Style for dropdown items */
+.dropdown-menu a {
+    display: block;
+    padding: 8px 12px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown on click */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.search-bar {
+    padding: 10px 0px 10px 35px; /* Add padding-left for space for the icon */
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 8px; /* Space below the search bar */
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Light border for visibility */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+    color: #000; /* Set text color for readability */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23999' viewBox='0 0 24 24'%3E%3Cpath d='M21.71 20.29l-4.1-4.1A8.58 8.58 0 0 0 19 10.5 8.5 8.5 0 1 0 10.5 19a8.58 8.58 0 0 0 5.69-1.39l4.1 4.1a1 1 0 0 0 1.42-1.42zM4 10.5a6.5 6.5 0 1 1 6.5 6.5A6.51 6.51 0 0 1 4 10.5z'/%3E%3C/svg%3E");
+    background-size: 20px; /* Adjust the size of the search icon */
+    background-repeat: no-repeat;
+    background-position: 10px center; /* Position icon to the left */
+}
+
+.search-bar::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Adjust color and opacity as needed */
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left:10px; /* Space between profile picture and name */
+}
+
+.hed {
+   
+    font-size: 20px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the heading bold */
+    color: #000; /* Text color */
+    clear: both; /* Ensures it appears below floated elements */
+}
+
+
+.employee-grid {
+    display: grid; /* Use grid layout for the employee cards */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Space between cards */
+    width: 100%;    
+    padding: 0;
+}
+.employee-card {
+    background-color:rgb(230, 233, 240), 0.2;
+     
+    border-radius: 50px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Full width within the grid cell */
+    max-width: 300px; /* Set a max width for cards */
+    height: 170px; /* Fixed height for cards */
+}
+
+.employee-info {
+    display: flex;
+    align-items: center; /* Align avatar and text vertically */
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px; /* Space between avatar and text */
+}
+
+.employee-details {
+    flex: 1; /* Allow details to take available space */
+    color: #000;
+}
+
+.title {
+    font-size: 16px; /* Larger title font size */
+    color: #000000;
+    font-weight: bold; /* Make the title bold */
+    margin-bottom: 5px;
+}
+
+.email {
+    font-size: 14px; /* Increase email font size */
+    color: #888;
+    margin-bottom: -15px;
+    margin-top: 20px;
+    word-wrap: break-word; /* Prevents email overflow */
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: auto; /* Push actions to the bottom */
+}
+
+.block-button, .details-button {
+    padding: 6px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.block-button {
+    background-color: transparent;
+    border: solid 2px black;
+    color: #000000;
+}
+
+.details-button {
+    background-color: #000000;
+    color: #fff;
+}
+.prof{
+    color: #000000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .search-bar {
+        max-width: 100%; /* Make search bar full width */
+    }
+
+    .filter-button {
+        padding: 6px 12px; /* Adjust filter button padding */
+        font-size: 12px; /* Reduce font size */
+    }
+
+    .employee-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+
+    .employee-card {
+        max-width: 100%; /* Ensure cards take full width on small screens */
+    }
+
+    .avatar {
+        width: 50px; /* Reduce avatar size */
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header, .filter {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+    }
+
+    .filter-button {
+        padding: 5px 10px; /* Smaller buttons for mobile */
+        font-size: 10px;
+    }
+
+    .employee-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+
+    .employee-card {
+        width: 100%; /* Make cards full width on mobile */
+        max-width: 400px; /* Optional: Limit max width for readability */
+    }
+}
